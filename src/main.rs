@@ -16,7 +16,7 @@ fn main() {
     let display = glium::Display
     ::new(window_builder, context_builder, &event_loop).unwrap();
 
-    let vertex1 = Vertex{position: [0.0, 0.5]};
+    let vertex1 = Vertex{position: [0.5, 0.5]};
     let vertex2 = Vertex{position: [-0.5, -0.5]};
 
     let shape = vec![vertex1, vertex2];
