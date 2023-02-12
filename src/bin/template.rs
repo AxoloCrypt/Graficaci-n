@@ -1,3 +1,12 @@
+/*
+    *******************************************
+    U1P1
+    First program with OpenGL
+    Author: AxoloCrypt
+    Date: 12/02/2023
+    *******************************************
+ */
+
 extern crate glium;
 
 use glium::{glutin, Surface};

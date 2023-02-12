@@ -1,3 +1,12 @@
+/*
+    *******************************************
+    Library implementations for coding exercises
+    Author: AxoloCrypt
+    Date: 12/02/2023
+    *******************************************
+ */
+
+
 pub mod vertex {
 
     use glium::implement_vertex;
