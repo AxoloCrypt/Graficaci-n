@@ -1,11 +1,7 @@
-#[macro_use]
 extern crate glium;
 
-mod lib;
-
-
 use glium::{glutin, Surface};
-use lib::vertex::Vertex;
+use graficacion::vertex::Vertex;
 
 
 fn main() {
