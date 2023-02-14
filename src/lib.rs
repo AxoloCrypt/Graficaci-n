@@ -61,7 +61,7 @@ pub mod algorithms {
 
     fn set_pixel(x: f32, y: f32, buffer: &mut Vec<u32>, screen_width : usize){
         let position = ((y as usize) * (screen_width)) + x as usize;
-        buffer[position] = 0xff_ff_ff;
+        buffer[position] = 0xff_ff_ff; //white
     }
 
 
