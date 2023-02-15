@@ -2,7 +2,7 @@ extern crate minifb;
 
 use minifb::{Window, WindowOptions};
 use graficacion::algorithms::line_dda;
-use graficacion::vertex::Vertex;
+use graficacion::vertex::VertexF;
 
 const WIDTH: usize = 640;
 const HEIGHT: usize = 360;
@@ -26,14 +26,14 @@ fn main() {
     window.limit_update_rate(Some(std::time::Duration::from_micros(16600)));
 
 
-    let vertex1 = Vertex{position: [0.0, 0.0]};
-    let vertex2 = Vertex{position: [639.0, 357.0]};
+    let vertex1 = VertexF{position: [0.0, 0.0]};
+    let vertex2 = VertexF{position: [639.0, 357.0]};
 
-    let vertex3 = Vertex{position: [200.0, 300.0]};
-    let vertex4 = Vertex{position: [400.0, 200.0]};
+    let vertex3 = VertexF{position: [200.0, 300.0]};
+    let vertex4 = VertexF{position: [400.0, 200.0]};
 
-    let vertex5 = Vertex{position: [150.0, 150.0]};
-    let vertex6 = Vertex{position: [150.0, 300.0]};
+    let vertex5 = VertexF{position: [150.0, 150.0]};
+    let vertex6 = VertexF{position: [150.0, 300.0]};
 
     while window.is_open() {
         window.update_with_buffer(&buffer, WIDTH, HEIGHT).unwrap();
