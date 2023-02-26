@@ -12,14 +12,15 @@ pub mod vertex {
     use glium::implement_vertex;
 
     #[derive(Copy, Clone)]
+    pub struct VertexI {
+        pub position: [i32; 2]
+    }
+
+    #[derive(Copy, Clone)]
     pub struct VertexF {
        pub position: [f32; 2]
     }
 
-    #[derive(Copy, Clone)]
-    pub struct VertexI {
-        pub position: [i32; 2]
-    }
 
     implement_vertex!(VertexF, position);
 }
