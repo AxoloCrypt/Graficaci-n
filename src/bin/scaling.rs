@@ -8,7 +8,7 @@ fn main() {
 
     let wb = glutin::window::WindowBuilder::new()
         .with_inner_size(glutin::dpi::LogicalSize::new(600, 600))
-        .with_title("Scaling Figures");
+        .with_title("Scaling and Rotating Figures");
 
     let cb = glutin::ContextBuilder::new();
 
@@ -52,7 +52,8 @@ fn main() {
 
 
     let mut t: f32 = -0.5;
-
+    let mut z: f32 = -0.5;
+    let mut scale_up: bool = false;
 
     event_loop.run(move |ev, _, control_flow| {
 
@@ -63,15 +64,26 @@ fn main() {
             std::time::Duration::from_nanos(16_666_667);
 
         t += 0.0012;
-        // if t > 2.0 {
-        //     t = -0.5;
-        // }
+
+        if z >= 10.0 {
+            scale_up = true;
+        }
+        else if z <= 0.0 {
+            scale_up = false;
+        }
+
+        if !scale_up {
+            z += 0.0012;
+        }
+        else {
+            z -= 0.0012;
+        }
 
         let matrix = [
             [t.cos(), t.sin(), 0.0, 0.0],
             [-t.sin(), t.cos(), 0.0, 0.0],
             [0.0, 0.0, 1.0, 0.0],
-            [0.0, 0.0, 0.0, 1.0f32]
+            [0.0, 0.0, 0.0, z]
         ];
 
         let uniforms = uniform! {matrix: matrix};
