@@ -21,8 +21,20 @@ pub mod vertex {
        pub position: [f32; 2]
     }
 
+    #[derive(Copy,Clone)]
+    pub struct Vertex3D {
+        pub position: (f32, f32, f32),
+        pub normal: (f32, f32, f32),
+    }
+
+    #[derive(Copy, Clone)]
+    pub struct Normal3D {
+        pub position: (f32, f32, f32)
+    }
 
     implement_vertex!(VertexF, position);
+    implement_vertex!(Vertex3D, position, normal);
+    implement_vertex!(Normal3D, position);
 }
 
 pub mod algorithms {

@@ -85,7 +85,6 @@ fn main() {
             [0.0, 0.0, 1.0, 0.0],
             [0.0, 0.0, 0.0, z]
         ];
-
         let uniforms = uniform! {matrix: matrix};
 
         target.draw(&triangle_vertex_buffer, &indices, &program,
